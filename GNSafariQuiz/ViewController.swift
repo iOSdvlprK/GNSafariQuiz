@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var answer1Button: UIButton!
     @IBOutlet weak var answer2Button: UIButton!
     @IBOutlet weak var answer3Button: UIButton!
+    let questions: [QuestionModel] = [
+        QuestionModel(image: UIImage(resource: .lion), correctAnswer: 2, answer1: "Hippo", answer2: "Lion", answer3: "Antelope"),
+        QuestionModel(image: UIImage(resource: .giraffe), correctAnswer: 1, answer1: "Giraffe", answer2: "Crocodile", answer3: "Elephant"),
+        QuestionModel(image: UIImage(resource: .buffalo), correctAnswer: 3, answer1: "Hippo", answer2: "Lion", answer3: "Buffalo")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
