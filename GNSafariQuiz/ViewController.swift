@@ -27,11 +27,20 @@ class ViewController: UIViewController {
         setupQuestion()
     }
     
-    func setupQuestion() {
+    func nextQuestion() {
+        currentQuestionIndex += 1
         guard currentQuestionIndex <= questions.count - 1 else {
             print("We have reached the end of the quiz.")
+            currentQuestionIndex = 0
+            score = 0
+            scoreLabel.text = "Score 0"
+            setupQuestion()
             return
         }
+        setupQuestion()
+    }
+    
+    func setupQuestion() {
         let currentQuestion = questions[currentQuestionIndex]
         questionImageView.image = currentQuestion.image
         answer1Button.setTitle(currentQuestion.answer1, for: .normal)
@@ -43,13 +52,16 @@ class ViewController: UIViewController {
         let currentQuestion = questions[currentQuestionIndex]
         if currentQuestion.correctAnswer == 1 {
             print("Answer is correct!")
+            let alert = UIAlertController(title: "Correct!", message: "You got the right answer!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(okAction)
+            present(alert, animated: true)
             score += 1
             scoreLabel.text = "Score \(score)"
         } else {
             print("Answer incorrect.")
         }
-        currentQuestionIndex += 1
-        setupQuestion()
+        nextQuestion()
     }
     
     @IBAction func answer2ButtonTapped(_ sender: Any) {
@@ -61,8 +73,7 @@ class ViewController: UIViewController {
         } else {
             print("Answer incorrect.")
         }
-        currentQuestionIndex += 1
-        setupQuestion()
+        nextQuestion()
     }
     
     @IBAction func answer3ButtonTapped(_ sender: Any) {
@@ -74,8 +85,7 @@ class ViewController: UIViewController {
         } else {
             print("Answer incorrect.")
         }
-        currentQuestionIndex += 1
-        setupQuestion()
+        nextQuestion()
     }
 }
 
