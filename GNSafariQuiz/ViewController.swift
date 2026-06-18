@@ -47,45 +47,53 @@ class ViewController: UIViewController {
         answer2Button.setTitle(currentQuestion.answer2, for: .normal)
         answer3Button.setTitle(currentQuestion.answer3, for: .normal)
     }
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
+            self.nextQuestion()
+        }
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
 
     @IBAction func answer1ButtonTapped(_ sender: Any) {
         let currentQuestion = questions[currentQuestionIndex]
         if currentQuestion.correctAnswer == 1 {
             print("Answer is correct!")
-            let alert = UIAlertController(title: "Correct!", message: "You got the right answer!", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok", style: .default)
-            alert.addAction(okAction)
-            present(alert, animated: true)
+            showAlert(title: "Correct!", message: "You got the right answer!")
             score += 1
             scoreLabel.text = "Score \(score)"
         } else {
             print("Answer incorrect.")
+            showAlert(title: "Incorrect!", message: "You got the wrong answer!")
         }
-        nextQuestion()
     }
     
     @IBAction func answer2ButtonTapped(_ sender: Any) {
         let currentQuestion = questions[currentQuestionIndex]
         if currentQuestion.correctAnswer == 2 {
             print("Answer is correct!")
+            showAlert(title: "Correct!", message: "You got the right answer!")
             score += 1
             scoreLabel.text = "Score \(score)"
         } else {
             print("Answer incorrect.")
+            showAlert(title: "Incorrect!", message: "You got the wrong answer!")
         }
-        nextQuestion()
     }
     
     @IBAction func answer3ButtonTapped(_ sender: Any) {
         let currentQuestion = questions[currentQuestionIndex]
         if currentQuestion.correctAnswer == 3 {
             print("Answer is correct!")
+            showAlert(title: "Correct!", message: "You got the right answer!")
             score += 1
             scoreLabel.text = "Score \(score)"
         } else {
             print("Answer incorrect.")
+            showAlert(title: "Incorrect!", message: "You got the wrong answer!")
         }
-        nextQuestion()
     }
 }
 
