@@ -56,10 +56,10 @@ class ViewController: UIViewController {
         alert.addAction(okAction)
         present(alert, animated: true)
     }
-
-    @IBAction func answer1ButtonTapped(_ sender: Any) {
+    
+    func check(selectedAnswer answer: Int) {
         let currentQuestion = questions[currentQuestionIndex]
-        if currentQuestion.correctAnswer == 1 {
+        if currentQuestion.correctAnswer == answer {
             print("Answer is correct!")
             showAlert(title: "Correct!", message: "You got the right answer!")
             score += 1
@@ -68,32 +68,18 @@ class ViewController: UIViewController {
             print("Answer incorrect.")
             showAlert(title: "Incorrect!", message: "You got the wrong answer!")
         }
+    }
+
+    @IBAction func answer1ButtonTapped(_ sender: Any) {
+        check(selectedAnswer: 1)
     }
     
     @IBAction func answer2ButtonTapped(_ sender: Any) {
-        let currentQuestion = questions[currentQuestionIndex]
-        if currentQuestion.correctAnswer == 2 {
-            print("Answer is correct!")
-            showAlert(title: "Correct!", message: "You got the right answer!")
-            score += 1
-            scoreLabel.text = "Score \(score)"
-        } else {
-            print("Answer incorrect.")
-            showAlert(title: "Incorrect!", message: "You got the wrong answer!")
-        }
+        check(selectedAnswer: 2)
     }
     
     @IBAction func answer3ButtonTapped(_ sender: Any) {
-        let currentQuestion = questions[currentQuestionIndex]
-        if currentQuestion.correctAnswer == 3 {
-            print("Answer is correct!")
-            showAlert(title: "Correct!", message: "You got the right answer!")
-            score += 1
-            scoreLabel.text = "Score \(score)"
-        } else {
-            print("Answer incorrect.")
-            showAlert(title: "Incorrect!", message: "You got the wrong answer!")
-        }
+        check(selectedAnswer: 3)
     }
 }
 
