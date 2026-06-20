@@ -59,15 +59,27 @@ class ViewController: UIViewController {
     
     func check(selectedAnswer answer: Int) {
         let currentQuestion = questions[currentQuestionIndex]
+        var alertTitle = ""
+        var alertMessage = ""
+        
         if currentQuestion.correctAnswer == answer {
             print("Answer is correct!")
-            showAlert(title: "Correct!", message: "You got the right answer!")
             score += 1
             scoreLabel.text = "Score \(score)"
+            alertTitle = "Correct!"
+            alertMessage = "You got the correct answer!"
         } else {
             print("Answer incorrect.")
-            showAlert(title: "Incorrect!", message: "You got the wrong answer!")
+            alertTitle = "Incorrect!"
+            alertMessage = "You got the wrong answer!"
         }
+        
+        if currentQuestionIndex == questions.count {
+            alertTitle = "End of Quiz"
+            alertMessage = "Your final score is \(score) / \(questions.count)"
+        }
+        
+        showAlert(title: alertTitle, message: alertMessage)
     }
 
     @IBAction func answer1ButtonTapped(_ sender: Any) {
