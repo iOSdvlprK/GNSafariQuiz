@@ -28,7 +28,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcG-O0-ne6">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcG-O0-ne6">
                                 <rect key="frame" x="25" y="404" width="343" height="45"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
@@ -38,10 +38,10 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Answer 1"/>
                                 <connections>
-                                    <action selector="answer1ButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DmZ-Kc-LXw"/>
+                                    <action selector="answerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jj4-6c-rKS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9p-DF-E8N">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9p-DF-E8N">
                                 <rect key="frame" x="25" y="474" width="343" height="45"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
@@ -51,10 +51,10 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Answer 2"/>
                                 <connections>
-                                    <action selector="answer2ButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IUr-Yt-5k3"/>
+                                    <action selector="answerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="80L-pi-2MK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVo-qN-QUo">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVo-qN-QUo">
                                 <rect key="frame" x="25" y="544" width="343" height="45"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
@@ -64,7 +64,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Answer 3"/>
                                 <connections>
-                                    <action selector="answer3ButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e6o-KV-Lfw"/>
+                                    <action selector="answerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DKv-n5-cXs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -104,7 +104,7 @@
     <resources>
         <image name="lion" width="640" height="427"/>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

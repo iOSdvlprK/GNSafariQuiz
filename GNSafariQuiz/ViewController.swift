@@ -81,17 +81,9 @@ class ViewController: UIViewController {
         
         showAlert(title: alertTitle, message: alertMessage)
     }
-
-    @IBAction func answer1ButtonTapped(_ sender: Any) {
-        check(selectedAnswer: 1)
-    }
     
-    @IBAction func answer2ButtonTapped(_ sender: Any) {
-        check(selectedAnswer: 2)
-    }
-    
-    @IBAction func answer3ButtonTapped(_ sender: Any) {
-        check(selectedAnswer: 3)
+    @IBAction func answerButtonTapped(_ sender: UIButton) {
+        check(selectedAnswer: sender.tag)
     }
 }
 
